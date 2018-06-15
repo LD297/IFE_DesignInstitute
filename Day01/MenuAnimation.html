@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAnimation</title>
+</head>
+<style>
+    h3 {
+        transition: width 0.8s ease-in-out 0s;
+        -moz-transition: width 0.8s ease-in-out 0s;
+        -webkit-transition: width 0.8s ease-in-out 0s;
+        -o-transition: width 0.8s ease-in-out 0s;
+    }
+    canvas {
+        transition: width 0.3s ease-in-out 0s;
+        -moz-transition: width 0.3s ease-in-out 0s;
+        -webkit-transition: width 0.3s ease-in-out 0s;
+        -o-transition: width 03s ease-in-out 0s;
+    }
+</style>
+<body>
+<div style="display: flex; justify-content: center">
+    <div style="margin-top: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 80px">
+        <h3>前端学院</h3>
+        <div>
+            <canvas style="width: 0px; height: 5px; background-color: blue; float: left" id="leftCanvas" ></canvas>
+            <canvas style="width: 0px; height: 5px; background-color: blue; float: right" id="rightCanvas"></canvas>
+        </div>
+        <br/>
+        <br/>
+        <button style="display: block; width: 80px" onclick="clickChangeMode()">切换样式</button>
+    </div>
+</div>
+<script>
+    function clickChangeMode() {
+        let ele = document.getElementsByTagName("h3")[0]
+        if (ele.style.color == "blue") {
+            ele.style.color = "black"
+        }
+        else {
+            ele.style.color = "blue"
+        }
+        ele = null
+
+        let eles = document.getElementsByTagName("canvas");
+        for (let index=0, len=eles.length; index<len; index++) {
+            if (eles[index].style.width == "0px") {
+                eles[index].style.width = "40px";
+            }
+            else {
+                eles[index].style.width = "0px";
+            }
+        }
+        eles = null;
+    }
+</script>
+</body>
+</html>
