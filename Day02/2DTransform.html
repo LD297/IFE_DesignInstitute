@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DTransform</title>
+</head>
+<style>
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    li {
+        display: inline-block;
+        width: 60px;
+        height: 68px;
+        border: 1px solid #edecec;
+        background-color: #f7f6f6;
+        margin: 200px 15px;
+        text-align: center;
+        line-height: 68px;
+        overflow: hidden;
+
+    }
+</style>
+<body>
+<ul>
+    <li>box0</li>
+    <li>box1</li>
+    <li>box2</li>
+    <li>box3</li>
+    <li>box4</li>
+    <li>box5</li>
+</ul>
+<script>
+    let lis=document.getElementsByTagName("li")
+    let styles=["skewX(30deg)", "scaleX(0.5)", "rotate(45deg)", "translate(10px, 20px)", "skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px, 20px)"];
+    for (let index=0, len=lis.length; index<len; index++) {
+        lis[index+1].style.transform = styles[index];
+    }
+</script>
+</body>
+</html>
